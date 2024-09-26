@@ -1,3 +1,42 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier"
+  ],
+  "globals": {
+    "React": "readonly"
+  },
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [0],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-nested-ternary": "off",
+    "react/jsx-props-no-spreading": [0],
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        "allowAsProps": true
+      }
+    ]
+  },
+  "ignorePatterns": ["next.config.mjs", "node_modules/**/*"]
 }
