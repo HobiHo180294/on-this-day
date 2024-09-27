@@ -7,3 +7,5 @@ export interface LayoutProps<
 > extends Children {
   params?: ParamsConfig;
 }
+
+export type ValuesOfObject<EntityObject> = EntityObject[keyof EntityObject];

@@ -1,3 +1,4 @@
+import { HighlightsFormProvider, ReactQueryProvider } from '@/providers';
 import { LayoutProps } from '@/shared/types/globals';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
@@ -21,7 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <div id="root">
-          <main id="main">{children}</main>
+          <ReactQueryProvider>
+            <HighlightsFormProvider>
+              <main id="main">{children}</main>
+            </HighlightsFormProvider>
+          </ReactQueryProvider>
         </div>
       </body>
     </html>
