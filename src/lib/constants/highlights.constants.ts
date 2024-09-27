@@ -18,6 +18,14 @@ export const HIGHLIGHTS_LANGUAGE = {
   CHINESE: 'zh',
 } as const;
 
+export const HIGHLIGHTS_REQUEST_ERROR = {
+  BAD_REQUEST: 'URL is invalid. Please check your input and try again.',
+  NO_DATA_FOUND:
+    'There is no available data for the selected date. Please choose a different one and try again.',
+  UNSUPPORTED_LANGUAGE:
+    'The selected language is not supported. Please choose a different one.',
+} as const;
+
 export const HIGHLIGHTS_STALE_TIME =
   STALE_HOURS_AMOUNT *
   MINUTES_PER_HOUR *

@@ -5,7 +5,7 @@ import { Children } from '@/shared/types/globals';
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
-export const HighlightsFormProvider = ({
+export const HighlightsFeedFormProvider = ({
   children,
 }: Children): React.JSX.Element => {
   const methods = useForm<HighlightsFeedFormFieldsConfig>({
