@@ -1,2 +1,2 @@
-export { HighlightsFormProvider } from './HighlightsFormProvider';
+export { HighlightsFeedFormProvider } from './HighlightsFeedFormProvider';
 export { ReactQueryProvider } from './ReactQueryProvider';

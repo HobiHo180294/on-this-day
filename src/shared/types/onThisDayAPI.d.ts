@@ -1,4 +1,7 @@
-import { HIGHLIGHTS_LANGUAGE } from '@/lib/constants/highlights.constants';
+import {
+  HIGHLIGHTS_LANGUAGE,
+  HIGHLIGHTS_REQUEST_ERROR,
+} from '@/lib/constants/highlights.constants';
 import { ValuesOfObject } from './globals';
 
 type CategoryName = 'selected' | 'births' | 'deaths' | 'holidays' | 'events';
@@ -76,3 +79,7 @@ export interface CurrentDayInfo {
   MM: string;
   DD: string;
 }
+
+export type HighlightsRequestError = ValuesOfObject<
+  typeof HIGHLIGHTS_REQUEST_ERROR
+>;
