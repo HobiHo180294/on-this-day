@@ -1,0 +1,43 @@
+@use '@/styles/palette.module' as palette;
+@use '@/styles/mixins' as mixins;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+
+  &__learn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    margin: 0;
+    gap: 4rem 2rem;
+    list-style: none;
+  }
+}
+
+.learn {
+  &__link {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: palette.$charcoal-black;
+    background-color: palette.$soft-silver;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    @include mixins.interactive-states(
+      $hover-rules: (
+        transform: scale(1.05),
+      ),
+      $active-rules: (
+        transform: scale(1.05),
+      )
+    );
+  }
+}

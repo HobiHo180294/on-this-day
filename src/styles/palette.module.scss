@@ -1,0 +1,27 @@
+$neutral-gray: #909090;
+$whisper-white: #f4f7f5;
+$charcoal-black: #2b2b2b;
+$soft-silver: #c9c9c9;
+$platinum: #e6e6e6;
+$rustic-copper: #a45533;
+$graphite: #3d3d3d;
+$cloud-white: #f6f5f5;
+$slate-gray: #5b5b5b;
+$night-black: #333333;
+
+$smoke-shadow: rgba(0, 0, 0, 0.7);
+
+:export {
+  neutralGray: $neutral-gray;
+  whisperWhite: $whisper-white;
+  charcoalBlack: $charcoal-black;
+  softSilver: $soft-silver;
+  platinum: $platinum;
+  rusticCopper: $rustic-copper;
+  graphite: $graphite;
+  cloudWhite: $cloud-white;
+  slateGray: $slate-gray;
+  nightBlack: $night-black;
+
+  smokeShadow: $smoke-shadow;
+}

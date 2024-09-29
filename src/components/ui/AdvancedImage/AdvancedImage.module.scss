@@ -1,0 +1,9 @@
+.blur {
+  filter: blur(0.5rem);
+  transition: filter 0.3s ease-in;
+}
+
+.remove-blur {
+  filter: blur(0);
+  transition: filter 0.3s ease-in;
+}

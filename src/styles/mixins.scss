@@ -1,0 +1,39 @@
+@mixin interactive-states(
+  $hover-rules: (),
+  $active-rules: (),
+  $additional-focus-rules: (),
+  $focus-outline: none,
+  $focus-scale: 1.05
+) {
+  @media (hover: hover) {
+    &:hover {
+      @each $property, $value in $hover-rules {
+        #{$property}: $value;
+      }
+    }
+    &:active {
+      @each $property, $value in $active-rules {
+        #{$property}: $value;
+      }
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @each $property, $value in $hover-rules {
+        #{$property}: $value;
+      }
+      @each $property, $value in $active-rules {
+        #{$property}: $value;
+      }
+    }
+  }
+  &:focus,
+  &:focus-visible {
+    outline: $focus-outline;
+    transform: scale($focus-scale);
+
+    @each $property, $value in $additional-focus-rules {
+      #{$property}: $value;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@use '@/styles/palette.module' as palette;
+
+$base-font-size: 1.6rem;
+$scale-ratio: 1.25;
+$line-height: 1.5;
+
+$tablet-width: 1024px;
+$mobile-width: 768px;
+
+@function calculateFontSize($level) {
+  @return $base-font-size * pow($scale-ratio, $level);
+}
+
+@mixin heading-styles($font-size, $tablet-size, $mobile-size) {
+  font-size: $font-size;
+  line-height: $line-height;
+  margin-block: 0;
+  font-weight: 700;
+  color: palette.$charcoal-black;
+
+  @media (max-width: $tablet-width) {
+    font-size: $tablet-size;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: $mobile-size;
+  }
+}
+
+h1 {
+  @include heading-styles(
+    calculateFontSize(4),
+    calculateFontSize(3.5),
+    calculateFontSize(3)
+  );
+}
+
+h2 {
+  @include heading-styles(
+    calculateFontSize(3),
+    calculateFontSize(2.5),
+    calculateFontSize(2)
+  );
+}
+
+h3 {
+  @include heading-styles(
+    calculateFontSize(2),
+    calculateFontSize(1.75),
+    calculateFontSize(1.5)
+  );
+}
+
+h4 {
+  @include heading-styles(
+    calculateFontSize(1),
+    calculateFontSize(0.875),
+    calculateFontSize(0.75)
+  );
+}
+
+p {
+  font-size: $base-font-size;
+  line-height: $line-height;
+  margin-block: 0;
+  color: palette.$night-black;
+
+  @media (max-width: $tablet-width) {
+    font-size: calculateFontSize(-0.125);
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: calculateFontSize(-0.25);
+  }
+}

@@ -2,11 +2,11 @@ import { ReactQueryProvider } from '@/providers';
 import { LayoutProps } from '@/shared/types/globals';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Gowun_Batang } from 'next/font/google';
 
-const roboto = Roboto({
+const gowunBatang = Gowun_Batang({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '700'],
   display: 'swap',
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }: LayoutProps): React.JSX.Element {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={gowunBatang.className}>
         <div id="root">
           <ReactQueryProvider>
             <main id="main">{children}</main>

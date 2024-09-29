@@ -1,4 +1,7 @@
 @forward '~normalize.css';
+@forward 'typography';
+
+@use '@/styles/palette.module' as palette;
 
 html,
 body {
@@ -25,12 +28,9 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-}
-
 b,
-strong {
+strong,
+mark {
   font-weight: 700;
 }
 
@@ -39,8 +39,34 @@ strong {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: palette.$graphite;
 }
 
 #main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1 1 auto;
+}
+
+.ReactModal {
+  &__Overlay {
+    &--after-open {
+      opacity: 1 !important;
+    }
+
+    &--before-close {
+      opacity: 0 !important;
+    }
+  }
+
+  &__Content {
+    &--after-open {
+      transform: perspective(60rem) translateY(0%) rotateX(0deg) !important;
+    }
+
+    &--before-close {
+      transform: perspective(60rem) translateY(-100%) rotateX(45deg) !important;
+    }
+  }
 }

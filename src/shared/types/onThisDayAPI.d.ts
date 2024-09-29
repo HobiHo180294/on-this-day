@@ -6,10 +6,23 @@ import { ValuesOfObject } from './globals';
 
 type CategoryName = 'selected' | 'births' | 'deaths' | 'holidays' | 'events';
 
+interface HighlightContentURL {
+  page: string;
+  revisions: string;
+  edit: string;
+  talk: string;
+}
+
 export type Language = ValuesOfObject<typeof HIGHLIGHTS_LANGUAGE>;
 
 export interface Category {
   category: CategoryName;
+}
+
+export interface HighlightImage {
+  source: string;
+  width: number;
+  height: number;
 }
 
 export interface Highlight {
@@ -33,39 +46,20 @@ export interface Highlight {
 
     pageid: number;
 
-    thumbnail: {
-      source: string;
-      width: number;
-      height: number;
-    };
-
-    originalimage: {
-      source: string;
-      width: number;
-      height: number;
-    };
+    thumbnail?: HighlightImage;
+    originalimage?: HighlightImage;
 
     lang: string;
     dir: string;
     revision: string;
     tid: string;
     timestamp: string;
-    description: string;
-    description_source: string;
+    description?: string;
+    description_source?: string;
 
     content_urls: {
-      desktop: {
-        page: string;
-        revisions: string;
-        edit: string;
-        talk: string;
-      };
-      mobile: {
-        page: string;
-        revisions: string;
-        edit: string;
-        talk: string;
-      };
+      desktop: HighlightContentURL;
+      mobile: HighlightContentURL;
     };
 
     extract: string;

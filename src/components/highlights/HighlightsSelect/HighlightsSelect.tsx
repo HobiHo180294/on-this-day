@@ -3,6 +3,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import Select, { SingleValue } from 'react-select';
 import { HighlightsFeedFormFieldsConfig } from '../HighlightsFeedForm/HighlightsFeedForm.interface';
 import { HighlightsSelectProps, Option } from './HighlightsSelect.interface';
+import { highlightsSelectStylesSheet } from './HighlightsSelect.styles';
 
 export const HighlightsSelect = ({
   category,
@@ -55,6 +56,7 @@ export const HighlightsSelect = ({
           options={options}
           value={currentValue}
           onChange={handleChange}
+          styles={highlightsSelectStylesSheet}
         />
       )}
     />
