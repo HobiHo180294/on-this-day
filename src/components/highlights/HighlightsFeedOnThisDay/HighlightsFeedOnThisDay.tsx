@@ -24,8 +24,6 @@ export const HighlightsFeedOnThisDay = ({
       category,
     });
 
-  console.log('data:', data);
-
   const [currentHighlights, setCurrentHighlights] = useState<Highlight[]>([]);
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
