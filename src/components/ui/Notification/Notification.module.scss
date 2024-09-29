@@ -1,0 +1,9 @@
+@use '@/styles/palette.module' as palette;
+
+.notification {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: palette.$platinum;
+  background-color: palette.$charcoal-black;
+  font-size: 2rem;
+}

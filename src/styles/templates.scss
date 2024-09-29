@@ -1,0 +1,62 @@
+@use 'palette.module' as palette;
+@use 'mixins' as mixins;
+
+%hide-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+%content-button {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  color: palette.$charcoal-black;
+  background-color: palette.$cloud-white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @include mixins.interactive-states(
+    $hover-rules: (
+      color: palette.$cloud-white,
+      background-color: palette.$charcoal-black,
+    ),
+    $active-rules: (
+      color: palette.$slate-gray,
+    )
+  );
+}
+
+%icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @include mixins.interactive-states(
+    $hover-rules: (
+      outline: 0.1rem solid palette.$charcoal-black,
+      border-radius: 100%,
+    ),
+    $active-rules: (
+      background-color: palette.$neutral-gray,
+    ),
+    $additional-focus-rules: (
+      border-radius: 100%,
+    ),
+    $focus-outline: 0.1rem solid palette.$charcoal-black
+  );
+}

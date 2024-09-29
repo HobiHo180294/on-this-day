@@ -1,0 +1,62 @@
+@forward '@/styles/templates';
+@use '@/styles/palette.module' as palette;
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  background-color: palette.$neutral-gray;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.6rem;
+    padding: 2rem 1rem;
+  }
+
+  &__media {
+    position: relative;
+    height: 28rem;
+  }
+}
+
+.media {
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.description {
+  &__text {
+    text-align: justify;
+    font-size: 1.8rem;
+  }
+
+  &__more {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin: auto 0 0 0;
+  }
+}
+
+.more {
+  &__button {
+    @extend %content-button;
+    max-width: 20rem;
+  }
+
+  &__year {
+    background: none;
+    font-size: 1.8rem;
+    color: palette.$whisper-white;
+  }
+}

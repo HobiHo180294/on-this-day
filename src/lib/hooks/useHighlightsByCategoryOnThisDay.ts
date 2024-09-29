@@ -9,6 +9,7 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { getHighlightsFeedByDate } from '../actions';
 import {
+  HIGHLIGHTS_FEED_QUERY_KEY,
   HIGHLIGHTS_LANGUAGE,
   HIGHLIGHTS_STALE_TIME,
 } from '../constants/highlights.constants';
@@ -26,7 +27,7 @@ export const useHighlightsByCategoryOnThisDay = ({
   }, []);
 
   return useQuery({
-    queryKey: ['highlights-feed-on-this-day', category],
+    queryKey: [`${HIGHLIGHTS_FEED_QUERY_KEY}`, category],
     queryFn: () =>
       getHighlightsFeedByDate({
         category,
