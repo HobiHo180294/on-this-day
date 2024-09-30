@@ -86,6 +86,7 @@ export const HighlightsFeedOnThisDay = ({
               breakClassName={styles.pagination__break}
               breakLinkClassName={styles.pagination__break_link}
               disabledClassName={styles.pagination__disabled}
+              data-testid="react-paginate"
             />
           )}
         </>

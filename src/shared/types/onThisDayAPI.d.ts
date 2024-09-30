@@ -74,6 +74,12 @@ export interface CurrentDayInfo {
   DD: string;
 }
 
+export interface GetHighlightsFeedByDateActionParamsConfig
+  extends CurrentDayInfo,
+    Category {
+  language: Language;
+}
+
 export type HighlightsRequestError = ValuesOfObject<
   typeof HIGHLIGHTS_REQUEST_ERROR
 >;
