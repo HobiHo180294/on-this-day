@@ -13,7 +13,7 @@ export async function getHighlightsFeedByDate({
   DD,
 }: GetHighlightsFeedByDateActionParamsConfig): Promise<HighlightsFeed> {
   const response = await fetch(
-    `${process.env.WIKIPEDIA_FEED_API_BASE_URL}/feed/v1/wikipedia/${language}/onthisday/${category}/${MM}/${DD}`
+    `https://api.wikimedia.org/feed/v1/wikipedia/${language}/onthisday/${category}/${MM}/${DD}`
   );
 
   if (!response.ok)
