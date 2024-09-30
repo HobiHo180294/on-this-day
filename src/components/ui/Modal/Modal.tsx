@@ -32,6 +32,7 @@ export const Modal = ({
       }
       onAfterClose={() => clearAllBodyScrollLocks()}
       ref={reactModalRef}
+      data-testid="modal"
     >
       {onClose && (
         <button type="button" onClick={onClose} className={styles.modal__close}>

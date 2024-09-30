@@ -5,7 +5,9 @@
     "airbnb-typescript",
     "next/core-web-vitals",
     "next/typescript",
-    "prettier"
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
   ],
   "globals": {
     "React": "readonly"
