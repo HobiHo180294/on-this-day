@@ -10,7 +10,7 @@ import { http, HttpResponse } from 'msw';
 
 type AvailableCategory = Category['category'] | 'all';
 
-const baseURL = 'https://api.wikimedia.org';
+const baseURL = process.env.WIKIPEDIA_FEED_API_BASE_URL;
 
 const availableLanguages: Language[] = [
   'ar',
