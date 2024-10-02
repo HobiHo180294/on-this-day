@@ -16,6 +16,10 @@
     flex: 1;
     gap: 1.6rem;
     padding: 2rem 1rem;
+
+    > * {
+      margin-bottom: 0;
+    }
   }
 
   &__media {
@@ -36,7 +40,6 @@
 .description {
   &__text {
     text-align: justify;
-    font-size: 1.8rem;
   }
 
   &__more {
@@ -56,7 +59,18 @@
 
   &__year {
     background: none;
-    font-size: 1.8rem;
     color: palette.$whisper-white;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .highlight {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .highlight {
+    grid-column: span 6;
   }
 }

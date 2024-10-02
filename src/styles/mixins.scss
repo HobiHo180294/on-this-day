@@ -1,3 +1,19 @@
+@use 'breakpoints.module' as breakpoints;
+
+$remFactor: 10;
+
+@mixin adaptive-font($pcSize, $mobSize, $baseLineHeight) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: (breakpoints.$xl - breakpoints.$xs) / $remFactor;
+
+  --adaptive-font-size: #{$mobSize}rem + #{$addSize} * ((
+          100vw - #{breakpoints.$xs / $remFactor}rem
+        ) / #{breakpoints.$xl});
+
+  font-size: calc(var(--adaptive-font-size));
+  line-height: calc(#{$baseLineHeight} / var(--adaptive-font-size) * 100%);
+}
+
 @mixin interactive-states(
   $hover-rules: (),
   $active-rules: (),

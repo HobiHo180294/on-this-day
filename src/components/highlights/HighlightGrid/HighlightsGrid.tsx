@@ -1,6 +1,7 @@
 import { Modal, Notification } from '@/components/ui';
 import infoIcon from '@/public/info-ico.svg';
 import { Nullable } from '@/shared/types/globals';
+import breakpoints from '@/styles/breakpoints.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
 import { HighlightCard } from '../HighlightCard/HighlightCard';
@@ -41,7 +42,11 @@ export const HighlightsGrid = ({
                 <li key={page.pageid} className={styles.learn__item}>
                   <Link
                     className={styles.learn__link}
-                    href={page.content_urls.desktop.page}
+                    href={
+                      window.innerWidth >= Number(breakpoints.lg)
+                        ? page.content_urls.desktop.page
+                        : page.content_urls.mobile.page
+                    }
                     target="_blank"
                   >
                     {page.titles.normalized}

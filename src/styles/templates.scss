@@ -1,6 +1,11 @@
 @use 'palette.module' as palette;
 @use 'mixins' as mixins;
 
+%lead {
+  font-weight: 700;
+  @include mixins.adaptive-font(1.8, 1.6, 2.8);
+}
+
 %hide-scroll {
   &::-webkit-scrollbar {
     display: none;
@@ -18,12 +23,12 @@
   background-color: palette.$cloud-white;
   border: none;
   border-radius: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
   text-align: center;
   text-transform: capitalize;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @extend %lead;
 
   @include mixins.interactive-states(
     $hover-rules: (
@@ -45,6 +50,8 @@
   padding: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @extend %lead;
 
   @include mixins.interactive-states(
     $hover-rules: (
