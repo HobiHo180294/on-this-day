@@ -1,5 +1,7 @@
 @forward '@/styles/templates';
+
 @use '@/styles/palette.module' as palette;
+@use '@/styles/breakpoints.module' as breakpoints;
 
 .highlight {
   display: flex;
@@ -63,13 +65,13 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: #{breakpoints.$lg}px) {
   .highlight {
     grid-column: span 3;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: #{breakpoints.$sm}px) {
   .highlight {
     grid-column: span 6;
   }
