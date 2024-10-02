@@ -1,14 +1,16 @@
 @use 'breakpoints.module' as breakpoints;
 
+$maxWidth: breakpoints.$xl;
+$minDeviceSize: breakpoints.$xs;
 $remFactor: 10;
 
 @mixin adaptive-font($pcSize, $mobSize, $baseLineHeight) {
   $addSize: $pcSize - $mobSize;
-  $maxWidth: (breakpoints.$xl - breakpoints.$xs) / $remFactor;
+  $maxWidth: ($maxWidth - $minDeviceSize) / $remFactor;
 
   --adaptive-font-size: #{$mobSize}rem + #{$addSize} * ((
-          100vw - #{breakpoints.$xs / $remFactor}rem
-        ) / #{breakpoints.$xl});
+          100vw - #{$minDeviceSize / $remFactor}rem
+        ) / #{$maxWidth});
 
   font-size: calc(var(--adaptive-font-size));
   line-height: calc(#{$baseLineHeight} / var(--adaptive-font-size) * 100%);
