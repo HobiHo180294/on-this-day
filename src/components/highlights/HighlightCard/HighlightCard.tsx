@@ -32,12 +32,8 @@ export const HighlightCard = ({
       </div>
 
       <div className={styles.highlight__description}>
-        <h2 className={styles.description__title}>
-          {highlight.pages[0].titles.normalized}
-        </h2>
-        {subtitle && (
-          <h3 className={styles.description__subtitle}>{subtitle}</h3>
-        )}
+        <h2>{highlight.pages[0].titles.normalized}</h2>
+        {subtitle && <h3>{subtitle}</h3>}
         <p className={styles.description__text}>{highlight.text}</p>
 
         <div className={styles.description__more}>

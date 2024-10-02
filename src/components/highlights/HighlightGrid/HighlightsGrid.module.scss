@@ -1,3 +1,5 @@
+@forward '@/styles/templates';
+
 @use '@/styles/palette.module' as palette;
 @use '@/styles/mixins' as mixins;
 
@@ -27,9 +29,10 @@
     border-radius: 0.5rem;
     color: palette.$charcoal-black;
     background-color: palette.$soft-silver;
-    font-weight: 700;
     text-align: center;
     transition: all 0.3s ease;
+
+    @extend %lead;
 
     @include mixins.interactive-states(
       $hover-rules: (
